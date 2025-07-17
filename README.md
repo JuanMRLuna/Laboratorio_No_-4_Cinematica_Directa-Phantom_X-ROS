@@ -39,4 +39,4 @@ Se requiere modelar y controlar con precisión la cinemática directa del robot 
 * Un (1) manipulador Phantom X Pincher con su base en madera.
 
 
-
+JJ
