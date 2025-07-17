@@ -32,7 +32,7 @@ Se requiere modelar y controlar con precisión la cinemática directa del robot 
 
 * Paquetes de Dynamixel Workbench. https://github.com/labsir-un/ROB_Intro_ROS2_Humble_Phantom_Pincher_X100.git.
   
-* Paquete del robot Phantom X:.
+* Paquete del robot Phantom X.
 
 * Python.
 
