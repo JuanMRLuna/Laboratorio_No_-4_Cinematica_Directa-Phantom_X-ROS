@@ -116,7 +116,8 @@ El script `control_servo.py` implementa una interfaz gráfica para enviar config
 
 ## 🖥️ Interfaz Gráfica (HMI)
 
-![GUI](gui.jpg)
+<img src="gui.jpg" alt="GUI" width="75%">
+
 > La interfaz permite seleccionar poses, observar valores actuales de las articulaciones, y ver las imágenes asociadas a cada configuración.
 
 ---
@@ -145,7 +146,7 @@ Se adjunta el video correspondiente del brazo alcanzando cada posición solicita
 ---
 ## 📚 Conclusiones
 
-> El desarrollo del presente laboratorio permitió implementar una interfaz gráfica funcional en Python para el control del robot Phantom X Pincher utilizando ROS 2. Se alcanzó un control secuencial de las articulaciones, visualización en tiempo real de los valores articulares y ejecución confiable de múltiples poses predefinidas.
+El desarrollo del presente laboratorio permitió implementar una interfaz gráfica funcional en Python para el control del robot Phantom X Pincher utilizando ROS 2. Se alcanzó un control secuencial de las articulaciones, visualización en tiempo real de los valores articulares y ejecución confiable de múltiples poses predefinidas.
 
 Este enfoque práctico facilitó la comprensión de los conceptos de comunicación con servomotores, el manejo de tópicos y servicios en ROS 2, así como el diseño de interfaces de usuario para robots reales. En conjunto, el laboratorio fortaleció la capacidad para desarrollar soluciones completas que integran software, hardware y control en tiempo real.
 
