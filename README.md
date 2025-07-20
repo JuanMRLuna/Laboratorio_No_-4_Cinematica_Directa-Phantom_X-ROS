@@ -91,14 +91,6 @@ El script `control_servo.py` implementa una interfaz gráfica para enviar config
 
 ---
 
-## ✅ Resultados y Validación
-
-> *\[Insertar aquí capturas de pantalla de la GUI en uso, salidas del terminal y fotografías del robot ejecutando las poses]*
-
-> *Comparar la configuración gráfica generada por toolbox con las fotos del robot real.*
-
----
-
 ## 🖥️ Interfaz Gráfica (HMI)
 
 > *\[Insertar aquí captura de la GUI]*
