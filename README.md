@@ -54,7 +54,7 @@ Se busca:
 
 Se utilizó el modelo **Denavit-Hartenberg modificado (DHmod)** para definir los parámetros cinemáticos del manipulador.
 
-[Marcos de referencia robot](img/marcos.jpg)
+![Marcos de referencia robot](img/marcos.jpg)
 
 ### 🖼️ Parámetros DH Modificado
 
@@ -79,16 +79,13 @@ Total: $315$ mm
 
 ### 🖼️ Matriz de Transformación Homogénea Final
 
-> *\[Aquí insertar imagen escaneada o escrita de la MTH final obtenida manualmente]*
-> Esta matriz representa la transformación desde la base hasta el efector final del robot.
-
 Para simplificar la legibilidad de la matriz de transformación, definimos los siguientes términos comunes:
 
-*\[Imagen de terminos]*
+![Imagen de terminos](img/terminos.jpg)
 
 Utilizando estas definiciones, la matriz de transformación es:
 
-*\[Imagen de la Matriz]*
+![Imagen de la Matriz](img/mth.jpg)
 
 
 ---
@@ -119,7 +116,7 @@ El script `control_servo.py` implementa una interfaz gráfica para enviar config
 
 ## 🖥️ Interfaz Gráfica (HMI)
 
-> *\[Insertar aquí captura de la GUI]*
+![GUI](gui.jpg)
 > La interfaz permite seleccionar poses, observar valores actuales de las articulaciones, y ver las imágenes asociadas a cada configuración.
 
 ---
