@@ -1,93 +1,175 @@
-# 🧪 Laboratorio No. 4: Cinemática Directa del Phantom X con ROS 2
+# 🔪 Laboratorio No. 4: Cinemática Directa del Phantom X con ROS 2
 
 ## 🤖 Robot Manipulador: Phantom X Pincher
 
-## 👥 Integrantes:
-- Juan Manuel Rojas Luna  
-- Miguel Ángel Ortiz Mejía  
-- Dixon Alberto Cuesta Segura  
+## 👥 Integrantes
+
+* Juan Manuel Rojas Luna
+* Miguel Ángel Ortiz Mejía
+* Dixon Alberto Cuesta Segura
 
 ---
 
 ## 📌 Introducción
 
-Este laboratorio tiene como propósito principal aplicar los conceptos de cinemática directa en un entorno práctico, utilizando el manipulador Phantom X Pincher. A través de herramientas como **ROS 2** y **Python**, se logra el control de los servomotores **Dynamixel AX-12**, permitiendo explorar la relación entre modelos matemáticos y el comportamiento físico del robot.
+Este laboratorio tiene como propósito aplicar los conceptos de **cinemática directa** en un entorno práctico utilizando el robot Phantom X Pincher. Mediante el uso de **ROS 2**, **Python** y los servomotores **Dynamixel AX-12**, se busca comprender cómo los modelos matemáticos se relacionan con el movimiento físico del robot.
 
-Durante el desarrollo, se trabajará con **tópicos y servicios de ROS 2** para lograr un control secuencial sobre cada articulación del manipulador, además de realizar mediciones físicas necesarias para determinar correctamente los **parámetros Denavit-Hartenberg (DH)** del sistema.
+Se desarrolló una interfaz gráfica (HMI) con Python para enviar poses predefinidas al robot, visualizar en tiempo real la posición de cada articulación y validar los resultados con los cálculos de la matriz de transformación homogénea (MTH) obtenida con el modelo DH modificado.
 
 ---
 
 ## ❓ Planteamiento del Problema
 
-Se busca modelar y controlar con precisión la cinemática directa del robot Phantom X Pincher. Para ello, se deben:
+Se busca:
 
-- Identificar los parámetros geométricos del robot mediante medición física.
-- Implementar controladores articulares a través de ROS 2.
-- Validar la correspondencia entre el modelo teórico (cinemático) y los movimientos reales del manipulador.
-
-El desafío principal es lograr una integración efectiva entre **hardware**, **ROS 2** y **Python**, asegurando que el robot pueda ejecutar poses específicas de forma coherente y secuencial.
-
----
-
-## 🎯 Objetivos
-
-- ✅ Crear controladores articulares (Joint Controllers) con ROS 2 para los motores Dynamixel AX-12.
-- ✅ Manipular tópicos de estado y comando de cada articulación.
-- ✅ Utilizar servicios disponibles en los paquetes de ROS 2 para operar el manipulador.
-- ✅ Controlar el robot desde Python mediante interfaces ROS 2.
+* Medir físicamente el robot para extraer sus parámetros geométricos.
+* Implementar los Joint Controllers en ROS 2.
+* Controlar secuencialmente cada articulación.
+* Validar el modelo matemático con el comportamiento real del robot.
 
 ---
 
-## 🛠️ Requisitos de la Práctica
+## 🎯 Objetivos del Laboratorio
 
-- Sistema operativo: **Ubuntu 22.04 LTS** (preferiblemente)
-- Espacio de trabajo ROS 2 correctamente configurado (usando `colcon build`)
-- Paquetes necesarios:
-  - [`Dynamixel Workbench`](https://github.com/labsir-un/ROB_Intro_ROS2_Humble_Phantom_Pincher_X100.git)
-  - Paquete del robot Phantom X
-- Lenguaje de programación: **Python 3**
-- Hardware: **1 manipulador Phantom X Pincher con base de soporte en madera**
+* ✅ Crear controladores articulares con ROS 2 para los motores Dynamixel AX-12.
+* ✅ Manipular tópicos y servicios para cada articulación.
+* ✅ Conectar el robot Phantom X Pincher con Python usando ROS 2.
+* ✅ Crear una interfaz gráfica (GUI) funcional.
+* ✅ Graficar la configuración en el toolbox y comparar con el robot físico.
 
 ---
 
-## 📐 Cinemática Directa
+## 🛠️ Requisitos
 
-Se utilizó el método **Denavit-Hartenberg modificado (DHmod)** para modelar la cinemática directa del Phantom X. A partir de las mediciones físicas del manipulador, se establecieron los parámetros necesarios y se construyó la **Matriz de Transformación Homogénea (MTH)** final.
-
-### 🖼️ Espacio para imagen: Parámetros DH modificado
-
-> _[Aquí insertar imagen de la tabla de parámetros DHmod con mediciones]_  
+* Ubuntu 22.04 LTS
+* ROS 2 Humble + `colcon build`
+* [Dynamixel Workbench](https://github.com/labsir-un/ROB_Intro_ROS2_Humble_Phantom_Pincher_X100.git)
+* Python 3
+* Paquete Phantom X Pincher
+* Phantom X con base de madera
 
 ---
 
-### 🖼️ Espacio para imagen: MTH final obtenida a mano
+## 🖐️ Cinemática Directa del Phantom X
 
-> _[Aquí insertar imagen de la MTH final escrita a mano paso a paso]_  
+Se utilizó el modelo **Denavit-Hartenberg modificado (DHmod)** para definir los parámetros cinemáticos del manipulador.
+
+### 🖼️ Parámetros DH Modificado
+
+> *\[Aquí insertar imagen clara de la tabla DH con longitudes reales medidas]*
+
+---
+
+### 🖼️ Matriz de Transformación Homogénea Final
+
+> *\[Aquí insertar imagen escaneada o escrita de la MTH final obtenida manualmente]*
+> Esta matriz representa la transformación desde la base hasta el efector final del robot.
+
+---
+
+## 💻 Implementación en Python y ROS 2
+
+El script `control_servo.py` implementa una interfaz gráfica para enviar configuraciones articulares al robot, leer el estado actual y visualizarlo en tiempo real.
+
+### ⚙️ Funcionalidades de la GUI
+
+* Conexión vía puerto serial al motor.
+* Ejecución secuencial de las poses.
+* Carga de imágenes de cada configuración.
+* Lectura y visualización de ángulos actuales.
+* Conversión entre grados y valores Dynamixel.
+
+### 📦 Poses predefinidas utilizadas
+
+| Configuración | q1  | q2  | q3  | q4  | q5 |
+| ------------- | --- | --- | --- | --- | -- |
+| Home          | 0   | 0   | 0   | 0   | 0  |
+| Config 1      | 25  | 25  | 20  | -20 | 0  |
+| Config 2      | -35 | 35  | -30 | 30  | 0  |
+| Config 3      | 85  | -20 | 55  | 25  | 0  |
+| Config 4      | 80  | -35 | 55  | -45 | 0  |
 
 ---
 
 ## ✅ Resultados y Validación
 
-> _[Aquí se documentarán las pruebas realizadas: ejecución de poses, comparación entre modelo teórico y comportamiento real, problemas encontrados y cómo se resolvieron.]_
+> *\[Insertar aquí capturas de pantalla de la GUI en uso, salidas del terminal y fotografías del robot ejecutando las poses]*
+
+> *Comparar la configuración gráfica generada por toolbox con las fotos del robot real.*
 
 ---
 
+## 🖥️ Interfaz Gráfica (HMI)
+
+> *\[Insertar aquí captura de la GUI]*
+> La interfaz permite seleccionar poses, observar valores actuales de las articulaciones, y ver las imágenes asociadas a cada configuración.
+
+---
+
+## 📄 Instrucciones de Uso
+
+### 1. Ejecutar la GUI
+
+```bash
+python3 control_servo.py
+```
+
+### 2. Configuración previa
+
+* Conectar el robot vía USB.
+* Verificar que el puerto sea correcto (`/dev/ttyUSB0`).
+* Tener los motores conectados y alimentados.
+
+---
 ## Videos.
 
-Se adjunta el video correspondiente del brazo alcanzando cada posición solicitada y simultaneamente la demostración de uso de la interfaz de usuario.
+Se adjunta el video correspondiente del brazo alcanzando cada posición solicitada y simultaneamente la demostracipón de uso de la interfaz de usuario.
 
 [Video](https://youtu.be/Ski5qsBnYsE)
 
+---
 ## 📚 Conclusiones
 
-> _[Resumen de aprendizajes obtenidos, análisis de desempeño del sistema y sugerencias para futuras prácticas.]_
+> *\[Incluir aquí aprendizajes clave: relación teoría-práctica, utilidad de ROS 2, validación con el robot, importancia del modelado y la calibración.]*
 
 ---
 
-## 📎 Anexos
+## 📌 Anexos
 
-> _[Aquí puedes colocar capturas de terminal, diagramas de nodos en ROS 2, enlaces adicionales o cualquier material complementario.]_
+* Diagrama de flujo en Mermaid:
+
+```mermaid
+graph TD
+    Start --> Conectar[Conectar a Dynamixel]
+    Conectar --> MostrarGUI[Mostrar GUI]
+    MostrarGUI --> SelecciónPose[Seleccionar pose]
+    SelecciónPose --> EnviarÁngulos[Enviar valores Dynamixel]
+    EnviarÁngulos --> MovimientoSecuencial[Movimiento secuencial]
+    MovimientoSecuencial --> LecturaEstados[Leer estado final]
+    LecturaEstados --> End
+```
+
+* Archivos relevantes:
+
+  * `control_servo.py`
+  * Imagen de la tabla DH
+  * Imagen MTH final
+  * Fotos de cada configuración del robot
 
 ---
+
+## 🧠 Recomendaciones
+
+* Validar siempre los límites articulares antes de ejecutar una pose.
+* Evitar obstáculos físicos en el workspace.
+* Grabar cada pose para comparar contra el modelo gráfico.
+
+---
+
+## 📌 Referencias
+
+* Craig, J. J. (2005). *Introduction to Robotics: Mechanics and Control.*
+* [Documentación Dynamixel + ROS](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/#ros-tutorials)
+* Laboratorio Robótica Industrial – 2025-I
 
 
