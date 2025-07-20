@@ -54,6 +54,8 @@ Se busca:
 
 Se utilizó el modelo **Denavit-Hartenberg modificado (DHmod)** para definir los parámetros cinemáticos del manipulador.
 
+[Marcos de referencia robot](img/marcos.jpg)
+
 ### 🖼️ Parámetros DH Modificado
 
 | $i$ | $a_{i-1}$ | $\alpha_{i-1}$ | $d_i$ | $\theta_i$ |
