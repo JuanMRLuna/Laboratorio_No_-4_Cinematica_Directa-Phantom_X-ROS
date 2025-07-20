@@ -116,8 +116,7 @@ El script `control_servo.py` implementa una interfaz gráfica para enviar config
 
 ## 🖥️ Interfaz Gráfica (HMI)
 
-<img src="gui.jpg" alt="GUI" width="75%">
-
+![GUI](img/gui.jpg)
 > La interfaz permite seleccionar poses, observar valores actuales de las articulaciones, y ver las imágenes asociadas a cada configuración.
 
 ---
