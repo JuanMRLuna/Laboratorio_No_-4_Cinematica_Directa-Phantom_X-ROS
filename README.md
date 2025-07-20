@@ -56,8 +56,23 @@ Se utilizó el modelo **Denavit-Hartenberg modificado (DHmod)** para definir los
 
 ### 🖼️ Parámetros DH Modificado
 
-> *\[Aquí insertar imagen clara de la tabla DH con longitudes reales medidas]*
+| $i$ | $a_{i-1}$ | $\alpha_{i-1}$ | $d_i$ | $\theta_i$ |
+|---|---|---|---|---|
+| 1 | 0 | 0 | $l_1$ | $q_1^*$ |
+| 2 | 0 | $-\pi/2$ | 0 | $q_2^* - \pi/2$ |
+| 3 | $l_2$ | 0 | 0 | $q_3^*$ |
+| 4 | $l_3$ | 0 | 0 | $q_4^* - \pi/2$ |
+| 5 | 0 | $-\pi/2$ | 0 | $q_5^*$ |
+| 6 | 0 | 0 | $l_4$ | $\pi/2$ |
 
+### Link Lengths
+
+* $l_1 = 42$ mm
+* $l_2 = 104$ mm
+* $l_3 = 104$ mm
+* $l_4 = 65$ mm
+
+Total: $315$ mm
 ---
 
 ### 🖼️ Matriz de Transformación Homogénea Final
