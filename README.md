@@ -74,7 +74,7 @@ Se utilizó el método **Denavit-Hartenberg modificado (DHmod)** para modelar la
 
 ## Videos.
 
-Se adjunta el video correspondiente del brazo alcanzando cada posición solicitada y simultaneamente la demostracipón de uso de la interfaz de usuario.
+Se adjunta el video correspondiente del brazo alcanzando cada posición solicitada y simultaneamente la demostración de uso de la interfaz de usuario.
 
 [Video](https://youtu.be/Ski5qsBnYsE)
 
