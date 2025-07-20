@@ -65,7 +65,7 @@ Se utilizó el modelo **Denavit-Hartenberg modificado (DHmod)** para definir los
 | 5 | 0 | $-\pi/2$ | 0 | $q_5^*$ |
 | 6 | 0 | 0 | $l_4$ | $\pi/2$ |
 
-### Link Lengths
+### longitud de los eslabones
 
 * $l_1 = 42$ mm
 * $l_2 = 104$ mm
@@ -79,6 +79,15 @@ Total: $315$ mm
 
 > *\[Aquí insertar imagen escaneada o escrita de la MTH final obtenida manualmente]*
 > Esta matriz representa la transformación desde la base hasta el efector final del robot.
+
+Para simplificar la legibilidad de la matriz de transformación, definimos los siguientes términos comunes:
+
+*\[Imagen de terminos]*
+
+Utilizando estas definiciones, la matriz de transformación es:
+
+*\[Imagen de la Matriz]*
+
 
 ---
 
