@@ -114,6 +114,25 @@ El script `control_servo.py` implementa una interfaz gráfica para enviar config
 
 ---
 
+## Configuración Home
+
+![Configuración Home](img/hoome.jpg)
+
+## Configuración 1
+
+![Configuración 1](img/Posicion1.jpg)
+
+## Configuración 2
+
+![Configuración 2](img/Posicion2.jpg)
+
+## Configuración 3
+
+![Configuración 3](img/Posicion3.jpg)
+
+## Configuración 4
+
+![Configuración 4](img/posicion4.jpg)
 ## 🖥️ Interfaz Gráfica (HMI)
 
 ![GUI](img/gui.jpg)
