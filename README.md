@@ -87,7 +87,8 @@ Utilizando estas definiciones, la matriz de transformación es:
 
 ![Imagen de la Matriz](img/mth.jpg)
 
-
+## 💻 Modelo Cinematica Directa en MATLAB
+![Cinematica Directa](img/CinematicaDirecta.jpg)
 ---
 
 ## 💻 Implementación en Python y ROS 2
